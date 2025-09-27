@@ -9,6 +9,12 @@
 </head>
 
 <body>
+  <div id="loading-screen">
+    <lottie-player src="coffee-loading.json" background="transparent" speed="1" style="width: 300px; height: 300px;"
+      loop autoplay>
+    </lottie-player>
+  </div>
+
   <div id="navArea">
     <nav>
       <div class="inner">
@@ -162,6 +168,18 @@
         $nav.removeClass(open);
       });
     })(jQuery);
+  </script>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script>
+    window.onload = function () {
+      const loadingScreen = document.getElementById('loading-screen');
+      // 1500ミリ秒（1.5秒）後に is-loaded クラスを追加する
+      setTimeout(function () {
+        loadingScreen.classList.add('is-loaded');
+      }, 1500);
+    };
   </script>
 </body>
 
