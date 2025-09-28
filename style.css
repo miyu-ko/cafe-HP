@@ -119,8 +119,7 @@ header {
     object-fit: cover;
 }
 
-#about,
-#menu {
+#about {
     background-color: var(--gray-010);
     padding: var(--section-margin) 2rem;
 }
@@ -141,7 +140,9 @@ header {
 }
 
 #menu {
-    /* 上下の余白はそのままに、左右の余白だけを0にする */
+    background-color: var(--gray-010);
+    padding-top: 60px;
+    padding-bottom: 10rem;
     padding-left: 0;
     padding-right: 0;
 }
@@ -320,7 +321,7 @@ footer .copyright {
     }
 
     #menu {
-        /* 上下の余白はそのままに、左右の余白だけを0にする */
+        padding-top: 20px;
         padding-left: 0;
         padding-right: 0;
     }
