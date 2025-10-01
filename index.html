@@ -58,7 +58,7 @@
     <h2>ABOUT</h2>
     <div class="about-item">
       <img src="nathan-dumlao-6VhPY27jdps-unsplash.jpg" alt="">
-      <p class="texts">愛知県豊田市にひっそりと誕生<br><br>
+      <p class="texts fade-in-on-scroll">愛知県豊田市にひっそりと誕生<br><br>
         「OiSi Cafe」は、地元の新鮮な食材を使った<br>美味しい料理と心温まるサービスを提供するカフェです<br><br>
         私たちのミッションは<br>お客様にとって第二の家のような<br>居心地の良い空間を提供し、<br>
         地域社会とのつながりを大切にすることです<br><br>
@@ -190,6 +190,26 @@
         }, 2300);
       };
     }
+  </script>
+
+  <script>
+    // --- Scroll Animation Script ---
+    const animatedElements = document.querySelectorAll('.fade-in-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // 一度アニメーションしたら監視を停止
+        }
+      });
+    }, {
+      threshold: 0.1 // 要素が10%見えたら実行
+    });
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
   </script>
 </body>
 

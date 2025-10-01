@@ -134,7 +134,7 @@ header {
     margin: 0 auto;
 }
 
-.about-item .texts {
+.about-item .texts fade-in-on-scroll {
     text-align: center;
     padding: 1rem 0;
 }
@@ -265,42 +265,32 @@ footer .copyright {
 
 /* --- PC Styles (769px and up) --- */
 @media screen and (min-width: 769px) {
-    #navArea {
-        display: none;
-    }
-
     .about-item {
         display: flex;
+        justify-content: center;
+        /* 画像とテキストのセットを中央に配置 */
         align-items: center;
+        /* 画像とテキストを上下の中央で揃える */
+        gap: 3rem;
+        /* 画像とテキストの間の隙間 */
     }
 
     .about-item img {
-        flex: 1;
+        flex-shrink: 0;
+        /* 画像がテキストに押されて縮むのを防ぐ */
         width: 50%;
+        /* 横幅の割合 */
+        max-width: 600px;
+        /* 画像が大きくなりすぎないように制限 */
+        height: auto;
+        /* 高さを自動調整 */
     }
 
     .about-item .texts {
-        flex: 1;
-        width: 50%;
-        padding: 4rem;
-    }
-
-    #information .information-container {
-        flex-direction: row;
-        gap: 2rem;
-    }
-
-    #information table {
-        flex: 1;
-    }
-
-    .googlemap {
-        flex: 1;
-    }
-
-    .googlemap iframe {
-        height: 100%;
-        margin-top: 0;
+        width: 45%;
+        max-width: 480px;
+        text-align: left;
+        /* ★テキストを左揃えに戻す */
     }
 }
 
@@ -310,7 +300,7 @@ footer .copyright {
         display: none;
     }
 
-    .about-item .texts {
+    .about-item .texts fade-in-on-scroll {
         font-size: 0.8rem;
         line-height: 1.8;
     }
@@ -470,4 +460,18 @@ footer .copyright {
 #loading-screen.is-loaded {
     opacity: 0;
     visibility: hidden;
+}
+
+/*============ Scroll Animation =============*/
+/* アニメーションの初期状態（最初は透明で、少し下に配置） */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* is-visibleクラスが付与されたら、不透明にして元の位置に戻す */
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
