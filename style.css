@@ -265,6 +265,10 @@ footer .copyright {
 
 /* --- PC Styles (769px and up) --- */
 @media screen and (min-width: 769px) {
+    #navArea {
+        display: none;
+    }
+
     .about-item {
         display: flex;
         justify-content: center;
