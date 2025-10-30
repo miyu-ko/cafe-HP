@@ -64,13 +64,13 @@ header {
     display: inline-block;
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
-    color: #D36922;
+    color: #cb8353;
     text-decoration: none;
     transition: all 0.3s;
 }
 
 .pc-nav ul li a:hover {
-    color: var(--primary-050);
+    opacity: 0.6;
 }
 
 /* --- Sections --- */
