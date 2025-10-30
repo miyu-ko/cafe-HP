@@ -64,7 +64,7 @@ header {
     display: inline-block;
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
-    color: var(--light-100);
+    color: #D36922;
     text-decoration: none;
     transition: all 0.3s;
 }
